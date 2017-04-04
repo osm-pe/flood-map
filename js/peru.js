@@ -1,13 +1,13 @@
-var DATASET_ID = 'ciwm29xyd00082tmocm5l6osb';
-var DATASETS_BASE = 'https://api.mapbox.com/datasets/v1/chennaiflood/' + DATASET_ID + '/';
+var DATASET_ID = 'cj13pp0en01uu33mkxtrbexxs';
+var DATASETS_BASE = 'https://api.mapbox.com/datasets/v1/osmperu/' + DATASET_ID + '/';
 // var selectedRoadsSource;
-var datasetsAccessToken = 'sk.eyJ1IjoiY2hlbm5haWZsb29kIiwiYSI6ImNpaG9mOGljdTBibmN0aGo3NWR6Y3Q0aXQifQ.X73YugnJDlhZEhxz2X86WA';
+var datasetsAccessToken = 'sk.eyJ1Ijoib3NtcGVydSIsImEiOiJjajEzcWN2YTMwMXJnMzNwMDEyN3hvcWZqIn0.R1vxuvGw9hikD8mbtiK-Sg';
 
 // Define map locations
 var mapLocation = {
     'reset': {
-        'center': [80.2, 13],
-        'zoom': 11,
+        'center': [-78.228,-6.585],
+        'zoom': 7,
         'pitch': 0,
         'bearing': 0
     },
@@ -58,10 +58,10 @@ var mapLocation = {
 
 
 // Simple map
-mapboxgl.accessToken = 'pk.eyJ1IjoicGxhbmVtYWQiLCJhIjoiemdYSVVLRSJ9.g3lbg_eN0kztmsfIPxa9MQ';
+mapboxgl.accessToken = 'pk.eyJ1IjoicnViZW4iLCJhIjoiYlBrdkpRWSJ9.JgDDxJkvDn3us36aGzR6vg';
 var map = new mapboxgl.Map({
     container: 'map', // container id
-    style: 'mapbox://styles/planemad/cih4qzr0w0012awltzvpie7qa', //stylesheet location
+    style: 'mapbox://styles/ruben/cj0l87amv00292smpxah28h5n', //stylesheet location
     hash: true
 });
 mapLocate('reset');
