@@ -23,15 +23,15 @@
     <!-- Content -->
     <div id='map'></div>
     <div id='sidebar' class='pin-left col3 pad2 dark fill-navy'>
-      <h2>Perú - Mapa de inundaciones</h2>
-      <p>Este es una esfuerzo de la comunidad de OpenStreetMap Perú, para reportar las calles inundadas en el Perú, puedes ver las calles inundadas haciendo zoom a la zonas afectadas o también si conoces de calles afectadas puedes registrarlos, haciendo un clic en la calle, como mmuestra en la imagen!</p>
+      <h2>Mapa de inundaciones - Perú</h2>
+      <p>Ayudemos a los planificadores y a las autoridades de la ciudades afectadas a comprender el problema de las inundaciones, reporta las calles inundadas en el Perú haciendo un clic en la calle como se muestra en la imagen &darr;</p>
       <p>
         <strong>
         <span id="feature-count">...</span>
       </strong> Calles reportadas como inundadas</p>
-      <img class="space-bottom1" src="https://cloud.githubusercontent.com/assets/126868/11440554/86851886-9529-11e5-9bf5-55abcc223057.gif">
+      <img class="space-bottom1" src="https://cloud.githubusercontent.com/assets/1152236/24818180/fe7e36d0-1ba4-11e7-976a-697f0b781147.gif">
       <div data-map='legend'>
-      <div onclick='mapLocate("reset");' style="cursor: pointer; cursor: hand;";><h2 >Regiónes afectadas </h2> </div>
+        <div onclick='mapLocate("reset");' style="cursor: pointer; cursor: hand;";><h2 >Regiónes afectadas </h2> </div>
         
         <h3>Región Piura</h3>
         <div class="space-bottom1">
@@ -114,11 +114,16 @@
         </div>
       </div>
       <div class="linea"></div>
-      <div class="basedon">Based on <a href="http://osm-in.github.io/flood-map/">flood-map</a></div>
+      <div class="basedon"> <a href="https://www.facebook.com/osmpe">OpenStreetMap Perú</a>, Based on <a href="http://osm-in.github.io/flood-map/">flood-map</a></div>
     </div>
     <span id='map-query'></span>
     <div class="pad2 col8 space-bottom2 dark" style="position: absolute; z-index: 1000; bottom: 0; right: 0">
-      <div id="copy" class="pad2 fill-darken3 round prose prose-big col12" style="display: block;">Ayudemos a los planificadores y a las autoridades de la ciudades afectadas a comprender el problema de las inundaciones al contribuir a este mapa.</div>
+      <div id="copy" class="pad2 fill-darken3 round prose prose-big col12" style="display: block;">
+        <p>Registra una calle o zona afectada, con tan solo un clic en la calle, para ver las calles afectadas has zoom en el mapa , las calles afectadas se mostrarán en color morado.</p>
+        <p><strong>Nota:</strong></p>
+        <p>Si te confundiste al registrar una calle, vuelve hacer clic en la misma calle (la calle ya no estará marcado con color morado)</p>
+        
+      </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/vendor/jquery.mCustomScrollbar.js"></script>
