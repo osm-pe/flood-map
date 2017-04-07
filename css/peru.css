@@ -60,9 +60,14 @@ h1 {
 .basedon{
   position: fixed;
   bottom: 2px;
+  font-size: 10px;
 }
 
 .linea{
    border: 1px solid #808080;
    margin-bottom: 3px;
+}
+
+#sidebar h2{
+  color: #3796E9 !important;
 }
