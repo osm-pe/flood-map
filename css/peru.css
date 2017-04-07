@@ -61,3 +61,8 @@ h1 {
   position: fixed;
   bottom: 2px;
 }
+
+.linea{
+   border: 1px solid #808080;
+   margin-bottom: 3px;
+}

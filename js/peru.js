@@ -6,18 +6,169 @@ var datasetsAccessToken = 'sk.eyJ1Ijoib3NtcGVydSIsImEiOiJjajE4M2ZxbHcwNnFoMnFtb3
 // Define map locations
 var mapLocation = {
     'reset': {
-        'center': [-78.973,-5.949],
+        'center': [-74.797, -6.025],
         'zoom': 6,
         'pitch': 0,
         'bearing': 0
     },
-    'piura': {
-        'center': [-80.6065,-5.1876],
-        'zoom': 14.5,
+    'Catacaos': {
+        'center': [-80.6699, -5.2673],
+        'zoom': 15,
+        'pitch': 0,
+        'bearing': 0
+    },
+    'LaArena': {
+        'center': [-80.70748, -5.34578],
+        'zoom': 15,
+        'pitch': 0,
+        'bearing': 0
+    },
+    'LaUnion': {
+        'center': [-80.74195, -5.40367],
+        'zoom': 15,
+        'pitch': 0,
+        'bearing': 0
+    },
+    'Sechura': {
+        'center': [-80.8124, -5.5644],
+        'zoom': 15,
+        'pitch': 0,
+        'bearing': 0
+    },
+    'Sullana': {
+        'center': [-80.6902, -4.9015],
+        'zoom': 15,
+        'pitch': 0,
+        'bearing': 0
+    },
+    'Paita': {
+        'center': [-81.1025, -5.0929],
+        'zoom': 15,
+        'pitch': 0,
+        'bearing': 0
+    },
+    'Marcavelica': {
+        'center': [-80.71707, -4.8678],
+        'zoom': 15,
+        'pitch': 0,
+        'bearing': 0
+    },
+    'TamboGrande': {
+        'center': [-80.34149, -4.93203],
+        'zoom': 15,
+        'pitch': 0,
+        'bearing': 0
+    },
+    'Piura': {
+        'center': [-80.6193, -5.1941],
+        'zoom': 15,
+        'pitch': 0,
+        'bearing': 0
+    },
+    'Talara': {
+        'center': [-81.26854, -4.57933],
+        'zoom': 15,
+        'pitch': 0,
+        'bearing': 0
+    },
+    'Macora': {
+        'center': [-81.04642, -4.10466],
+        'zoom': 15,
+        'pitch': 0,
+        'bearing': 0
+    },
+    'Chulucanas': {
+        'center': [-80.1606, -5.0977],
+        'zoom': 15,
+        'pitch': 0,
+        'bearing': 0
+    },
+    'Tumbes': {
+        'center': [-80.45437, -3.5706],
+        'zoom': 15,
+        'pitch': 0,
+        'bearing': 0
+    },
+    'Zarumilla': {
+        'center': [-80.26024, -3.4848],
+        'zoom': 15,
+        'pitch': 0,
+        'bearing': 0
+    },
+    'PuntaSal': {
+        'center': [-80.97488, -3.97913],
+        'zoom': 15,
+        'pitch': 0,
+        'bearing': 0
+    },
+    'Chiclayo': {
+        'center': [-79.834, -6.7729],
+        'zoom': 15,
+        'pitch': 0,
+        'bearing': 0
+    },
+    'Ferreñafe': {
+        'center': [-79.7852, -6.6368],
+        'zoom': 15,
+        'pitch': 0,
+        'bearing': 0
+    },
+    'Trujillo': {
+        'center': [-79.0248, -8.1116],
+        'zoom': 15,
+        'pitch': 0,
+        'bearing': 0
+    },
+    'Viru': {
+        'center': [-78.74989, -8.41427],
+        'zoom': 15,
+        'pitch': 0,
+        'bearing': 0
+    },
+    'Chimbote': {
+        'center': [-78.5806, -9.0711],
+        'zoom': 15,
+        'pitch': 0,
+        'bearing': 0
+    },
+    'Huarmey': {
+        'center': [-78.1467, -10.0702],
+        'zoom': 15,
+        'pitch': 0,
+        'bearing': 0
+    },
+    'Casma': {
+        'center': [-78.2955, -9.4751],
+        'zoom': 15,
+        'pitch': 0,
+        'bearing': 0
+    },
+    'PuntaHermosa': {
+        'center': [-76.8203, -12.3331],
+        'zoom': 15,
+        'pitch': 0,
+        'bearing': 0
+    },
+    'Chosica': {
+        'center': [-76.6964, -11.9386],
+        'zoom': 15,
+        'pitch': 0,
+        'bearing': 0
+    },
+    'Chaclacayo': {
+        'center': [-76.7677, -11.9747],
+        'zoom': 15,
+        'pitch': 0,
+        'bearing': 0
+    },
+    'Huachipa': {
+        'center': [-76.9445, -12.014],
+        'zoom': 15,
         'pitch': 0,
         'bearing': 0
     }
 };
+
 
 
 // Simple map
@@ -70,7 +221,7 @@ var mapLayerCollection = {
     ]
 };
 
-map.on('style.load', function (e) {
+map.on('style.load', function(e) {
 
     var selectedRoadsSource = new mapboxgl.GeoJSONSource({});
 
@@ -108,12 +259,13 @@ map.on('style.load', function (e) {
         }
     });
 
-  // Select flooded roads
+    // Select flooded roads
     var featuresGeoJSON = {
         'type': 'FeatureCollection',
         'features': []
     };
     $('#feature-count').toggleClass('loading');
+
     function getFeatures(startID) {
         var url = DATASETS_BASE + 'features';
         var params = {
@@ -122,9 +274,9 @@ map.on('style.load', function (e) {
         if (startID) {
             params.start = startID;
         }
-        $.getJSON(url, params, function (data) {
+        $.getJSON(url, params, function(data) {
             if (data.features.length > 0) {
-                data.features.forEach(function (feature) {
+                data.features.forEach(function(feature) {
                     feature.properties.id = feature.id;
                 });
                 featuresGeoJSON.features = featuresGeoJSON.features.concat(data.features);
@@ -133,8 +285,8 @@ map.on('style.load', function (e) {
                 selectedRoadsSource.setData(featuresGeoJSON);
                 updateFeatureCount(featuresGeoJSON);
             } else {
-              updateFeatureCount(featuresGeoJSON);
-              $('#feature-count').toggleClass('loading');
+                updateFeatureCount(featuresGeoJSON);
+                $('#feature-count').toggleClass('loading');
                 playWithMap(featuresGeoJSON);
             }
         });
@@ -142,11 +294,11 @@ map.on('style.load', function (e) {
 
     getFeatures(null);
 
-  //Live query
-    map.on('mousemove', function (e) {
+    //Live query
+    map.on('mousemove', function(e) {
         map.featuresAt(e.point, {
             radius: 4
-        }, function (err, features) {
+        }, function(err, features) {
             if (err) throw err;
 
             var featuresList = '';
@@ -162,38 +314,38 @@ map.on('style.load', function (e) {
         });
     });
 
-  //Popups on click
-    map.on('click', function (e) {
+    //Popups on click
+    map.on('click', function(e) {
         map.featuresAt(e.point, {
             radius: 10,
             layer: ['chennai-relief-camps', 'chennai-relief-camps-22nov'],
             includeGeometry: true
-        }, function (err, features) {
+        }, function(err, features) {
             if (err) throw err;
 
             if (features.length > 0) {
                 var popupHTML = '<h5>' + features[0].properties.Name + '</h5><p>' + $('[data-map-layer=' + features[0].layer.id + ']').html() + '</p>';
                 var popup = new mapboxgl.Popup()
-                                        .setLngLat(features[0].geometry.coordinates)
-                                        .setHTML(popupHTML)
-                                        .addTo(map);
+                    .setLngLat(features[0].geometry.coordinates)
+                    .setHTML(popupHTML)
+                    .addTo(map);
             }
         });
     });
 
-  // Update map legend from styles
-  $('[data-map-layer]').each(function () {
-      // Get the color of the feature from the map
-      var obj = $(this).attr('data-map-layer');
+    // Update map legend from styles
+    $('[data-map-layer]').each(function() {
+        // Get the color of the feature from the map
+        var obj = $(this).attr('data-map-layer');
 
-      try {
-          var color = map.getPaintProperty(obj, 'circle-color');
-          // Set the legend color
-          $(this).prepend('<div class="map-legend-circle" style="background:"' + array2rgb(color) + '></div>');
-      } catch (e) {
-          return;
-      }
-  });
+        try {
+            var color = map.getPaintProperty(obj, 'circle-color');
+            // Set the legend color
+            $(this).prepend('<div class="map-legend-circle" style="background:"' + array2rgb(color) + '></div>');
+        } catch (e) {
+            return;
+        }
+    });
 
     function playWithMap(data) {
         var addedRoads = [];
@@ -208,11 +360,15 @@ map.on('style.load', function (e) {
         }
 
 
-        map.on('click', function (e) {
+        map.on('click', function(e) {
             if (map.getZoom() >= 15) {
                 //Check if the feature clicked on is in the selected Roads Layer.
                 //If yes, UNSELECT the road
-                map.featuresAt(e.point, {radius: 5, includeGeometry: true, layer: 'selected-roads'}, function (err, features) {
+                map.featuresAt(e.point, {
+                    radius: 5,
+                    includeGeometry: true,
+                    layer: 'selected-roads'
+                }, function(err, features) {
                     if (err) throw err;
 
                     if (features.length > 0) {
@@ -225,7 +381,7 @@ map.on('style.load', function (e) {
                             'method': 'DELETE',
                             'url': saveURL,
                             'contentType': 'application/json',
-                            'success': function () {
+                            'success': function() {
                                 $('#map').toggleClass('loading');
                                 data['features'].splice(index, 1);
                                 addedRoads.splice(index, 1);
@@ -233,7 +389,7 @@ map.on('style.load', function (e) {
                                 selectedRoadsSource.setData(data);
                                 updateFeatureCount(data);
                             },
-                            'error': function () {
+                            'error': function() {
                                 $('#map').toggleClass('loading');
                             }
                         });
@@ -241,7 +397,11 @@ map.on('style.load', function (e) {
                         //If road is not present in the `selected-roads` layer,
                         //check the glFeatures layer to see if the road is present.
                         //If yes,ADD it to the `selected-roads` layer
-                        map.featuresAt(e.point, {radius: 5, includeGeometry: true, layer: mapLayerCollection['road']}, function (err, glFeatures) {
+                        map.featuresAt(e.point, {
+                            radius: 5,
+                            includeGeometry: true,
+                            layer: mapLayerCollection['road']
+                        }, function(err, glFeatures) {
                             if (err) throw err;
 
                             var tempObj = {
@@ -264,7 +424,7 @@ map.on('style.load', function (e) {
                                 'data': JSON.stringify(tempObj),
                                 'dataType': 'json',
                                 'contentType': 'application/json',
-                                'success': function (response) {
+                                'success': function(response) {
                                     $('#map').toggleClass('loading');
                                     tempObj.id = response.id;
                                     tempObj.properties.id = response.id;
@@ -274,7 +434,7 @@ map.on('style.load', function (e) {
                                     selectedRoadsSource.setData(data);
                                     updateFeatureCount(data);
                                 },
-                                'error': function () {
+                                'error': function() {
                                     $('#map').toggleClass('loading');
                                 }
                             });
@@ -285,7 +445,7 @@ map.on('style.load', function (e) {
         });
     }
 });
-  //Update feature count
+//Update feature count
 function updateFeatureCount(data) {
     var count = data.features.length;
     $('#feature-count').html(count);
@@ -293,17 +453,17 @@ function updateFeatureCount(data) {
 
 function array2rgb(color) {
     // Combine and return the values
-    return 'rgba(' + color.map(function (x) {
+    return 'rgba(' + color.map(function(x) {
         return x * 255;
     }).join() + ')';
 }
 
-$(function () {
+$(function() {
     $('#sidebar').mCustomScrollbar({
         theme: 'rounded-dots',
         scrollInertia: 100,
         callbacks: {
-            onInit: function () {
+            onInit: function() {
                 $('#sidebar').css('overflow', 'auto');
             }
         }

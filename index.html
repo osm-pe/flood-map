@@ -31,18 +31,66 @@
       </strong> Calles reportadas como inundadas</p>
       <img class="space-bottom1" src="https://cloud.githubusercontent.com/assets/126868/11440554/86851886-9529-11e5-9bf5-55abcc223057.gif">
       <div data-map='legend'>
-        <h5>Areas afectadas<a href="#" class="truncate strong bloxk small" onclick='mapLocate("reset");'>
+        <h2>Areas afectadas<a href="#" class="truncate strong bloxk small" onclick='mapLocate("reset");'>
           (reset)
-        </a></h5>
+        </a></h2>
+        <h3>Región Piura</h3>
         <div class="space-bottom1">
           <ul>
-            <li>
-              <a href="#" class="truncate strong bloxk small" onclick='mapLocate("piura");'>
-                Piura
-              </a>
-            </li>
+            <li><a href="#" class="truncate strong bloxk small" onclick='mapLocate("Catacaos");'> Catacaos</a></li>
+            <li><a href="#" class="truncate strong bloxk small" onclick='mapLocate("LaArena");'> La Arena</a></li>
+            <li><a href="#" class="truncate strong bloxk small" onclick='mapLocate("LaUnion");'> La Union</a></li>
+            <li><a href="#" class="truncate strong bloxk small" onclick='mapLocate("Sechura");'> Sechura</a></li>
+            <li><a href="#" class="truncate strong bloxk small" onclick='mapLocate("Sullana");'> Sullana</a></li>
+            <li><a href="#" class="truncate strong bloxk small" onclick='mapLocate("Paita");'> Paita</a></li>
+            <li><a href="#" class="truncate strong bloxk small" onclick='mapLocate("Marcavelica");'> Marcavelica</a></li>
+            <li><a href="#" class="truncate strong bloxk small" onclick='mapLocate("TamboGrande");'> Tambo Grande</a></li>
+            <li><a href="#" class="truncate strong bloxk small" onclick='mapLocate("Piura");'> Piura</a></li>
+            <li><a href="#" class="truncate strong bloxk small" onclick='mapLocate("Talara");'> Talara</a></li>
+            <li><a href="#" class="truncate strong bloxk small" onclick='mapLocate("Macora");'> Macora</a></li>
+            <li><a href="#" class="truncate strong bloxk small" onclick='mapLocate("Chulucanas");'> Chulucanas</a></li>
           </ul>
         </div>
+        <h3>Región Tumbes</h3>
+        <div class="space-bottom1">
+          <ul>
+            <li><a href="#" class="truncate strong bloxk small" onclick='mapLocate("Tumbes");'> Tumbes</a></li>
+            <li><a href="#" class="truncate strong bloxk small" onclick='mapLocate("Zarumilla");'> Zarumilla</a></li>
+            <li><a href="#" class="truncate strong bloxk small" onclick='mapLocate("PuntaSal");'> Punta Sal</a></li>
+          </ul>
+        </div>
+        <h3>Región Lambayeque</h3>
+        <div class="space-bottom1">
+          <ul>
+            <li><a href="#" class="truncate strong bloxk small" onclick='mapLocate("Chiclayo");'> Chiclayo</a></li>
+            <li><a href="#" class="truncate strong bloxk small" onclick='mapLocate("Ferreñafe");'> Ferreñafe</a></li>
+          </ul>
+        </div>
+        <h3>Región La Libertad</h3>
+        <div class="space-bottom1">
+          <ul>
+            <li><a href="#" class="truncate strong bloxk small" onclick='mapLocate("Trujillo");'> Trujillo </a></li>
+            <li><a href="#" class="truncate strong bloxk small" onclick='mapLocate("Viru");'> Viru</a></li>
+          </ul>
+        </div>
+        <h3>Región Ancash</h3>
+        <div class="space-bottom1">
+          <ul>
+            <li><a href="#" class="truncate strong bloxk small" onclick='mapLocate("Chimbote");'> Chimbote</a></li>
+            <li><a href="#" class="truncate strong bloxk small" onclick='mapLocate("Huarmey");'> Huarmey</a></li>
+            <li><a href="#" class="truncate strong bloxk small" onclick='mapLocate("Casma");'> Casma</a></li>
+          </ul>
+        </div>
+        <h3>Región Lima</h3>
+        <div class="space-bottom1">
+          <ul>
+            <li><a href="#" class="truncate strong bloxk small" onclick='mapLocate("PuntaHermosa");'> Punta Hermosa</a></li>
+            <li><a href="#" class="truncate strong bloxk small" onclick='mapLocate("Chosica");'> Chosica</a></li>
+            <li><a href="#" class="truncate strong bloxk small" onclick='mapLocate("Chaclacayo");'> Chaclacayo</a></li>
+            <li><a href="#" class="truncate strong bloxk small" onclick='mapLocate("Huachipa");'> Huachipa</a></li>
+          </ul>
+        </div>
+        <div class="linea"></div>
         <h5>Resaltar <a href="#" class="truncate strong bloxk small" onclick='mapHighlightReset();'>
           (reset)
         </a></h5>
@@ -66,6 +114,7 @@
           </ul>
         </div>
       </div>
+      <div class="linea"></div>
       <div class="basedon">Based on <a href="http://osm-in.github.io/flood-map/">flood-map</a></div>
     </div>
     <span id='map-query'></span>
@@ -77,14 +126,12 @@
     <script src="js/mapbox-gl-js-common.js"></script>
     <script type="text/javascript" src="js/peru.js"></script>
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-96994197-1', 'auto');
-      ga('send', 'pageview');
-
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-96994197-1', 'auto');
+    ga('send', 'pageview');
     </script>
   </body>
 </html>
