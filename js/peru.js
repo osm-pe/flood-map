@@ -1,58 +1,21 @@
-var DATASET_ID = 'ciwm29xyd00082tmocm5l6osb';
-var DATASETS_BASE = 'https://api.mapbox.com/datasets/v1/chennaiflood/' + DATASET_ID + '/';
+var DATASET_ID = 'cj18398d106jf33o7mkqouu14';
+var DATASETS_BASE = 'https://api.mapbox.com/datasets/v1/osmperu/' + DATASET_ID + '/';
 // var selectedRoadsSource;
-var datasetsAccessToken = 'sk.eyJ1IjoiY2hlbm5haWZsb29kIiwiYSI6ImNpaG9mOGljdTBibmN0aGo3NWR6Y3Q0aXQifQ.X73YugnJDlhZEhxz2X86WA';
+var datasetsAccessToken = 'sk.eyJ1Ijoib3NtcGVydSIsImEiOiJjajE4M2ZxbHcwNnFoMnFtb3B3bm40NHR2In0.fiGrJRCLZ41h2OPk2gUHVw';
 
 // Define map locations
 var mapLocation = {
     'reset': {
-        'center': [80.2, 13],
-        'zoom': 11,
+        'center': [-78.973,-5.949],
+        'zoom': 6,
         'pitch': 0,
         'bearing': 0
     },
-    'pallikaranai': {
-        'center': [80.22, 12.926],
-        'zoom': 13.8,
-        'pitch': 45,
-        'bearing': 90
-    },
-    'adyar-river': {
-        'center': [80.261, 13.014],
-        'zoom': 13.8,
-        'pitch': 60,
-        'bearing': -64,
-        'highlight': 'water'
-    },
-    'cooum-river': {
-        'center': [80.281, 13.074],
-        'zoom': 13.8,
-        'pitch': 60,
-        'bearing': -64
-    },
-    'mudichur': {
-        'center': [80.06, 12.91],
-        'zoom': 13,
-        'pitch': 50,
-        'bearing': -10
-    },
-    'aminjikarai': {
-        'center': [80.21, 13.07],
-        'zoom': 13.8,
-        'pitch': 50,
-        'bearing': -10
-    },
-    'velachery': {
-        'center': [80.21, 12.97],
-        'zoom': 13.8,
-        'pitch': 50,
-        'bearing': -10
-    },
-    'omr': {
-        'center': [80.23, 12.88],
-        'zoom': 13,
-        'pitch': 70,
-        'bearing': -10
+    'piura': {
+        'center': [-80.6065,-5.1876],
+        'zoom': 14.5,
+        'pitch': 0,
+        'bearing': 0
     }
 };
 
